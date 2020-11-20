@@ -16,8 +16,7 @@ struct ContentView: View {
         ZStack{
             VStack{
                 if(viewDisplayed == Views.searchView){
-                    Text("Search View")
-                        .padding()
+                    SearchView()
                 }
                 else{
                     Text("Should never be here")
