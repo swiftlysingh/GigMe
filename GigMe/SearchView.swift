@@ -47,6 +47,7 @@ struct SearchView: View {
                         }
                         Rectangle()
                             .frame(height:1)
+                            .padding(.vertical,5)
                     }
                     .padding(.top,20)
                     if(results == nil && searchText.isEmpty){
