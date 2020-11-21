@@ -34,6 +34,7 @@ class Session{
         }
         
         let split = text
+        
         //split text into words, for each word
         
         //Use text to find categories related to the search

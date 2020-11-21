@@ -16,7 +16,7 @@
 		3D87CC72256829B300FDEC54 /* GigMeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D87CC71256829B300FDEC54 /* GigMeTests.swift */; };
 		3D87CC7D256829B300FDEC54 /* GigMeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D87CC7C256829B300FDEC54 /* GigMeUITests.swift */; };
 		3D87CC8E256829C900FDEC54 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D87CC8D256829C900FDEC54 /* SearchView.swift */; };
-		3D87CC93256829DF00FDEC54 /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D87CC92256829DF00FDEC54 /* ViewRouter.swift */; };
+		3D87CC93256829DF00FDEC54 /* viewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D87CC92256829DF00FDEC54 /* viewRouter.swift */; };
 		3D87CC9825682AFD00FDEC54 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D87CC9725682AFD00FDEC54 /* Session.swift */; };
 		3D87CCA625686A6B00FDEC54 /* CoreObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D87CCA525686A6B00FDEC54 /* CoreObjects.swift */; };
 /* End PBXBuildFile section */
@@ -54,7 +54,7 @@
 		3D87CC7C256829B300FDEC54 /* GigMeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GigMeUITests.swift; sourceTree = "<group>"; };
 		3D87CC7E256829B300FDEC54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3D87CC8D256829C900FDEC54 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
-		3D87CC92256829DF00FDEC54 /* ViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
+		3D87CC92256829DF00FDEC54 /* viewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = viewRouter.swift; sourceTree = "<group>"; };
 		3D87CC9725682AFD00FDEC54 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		3D87CCA525686A6B00FDEC54 /* CoreObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreObjects.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -111,7 +111,7 @@
 				3D87CC5C256829AF00FDEC54 /* SceneDelegate.swift */,
 				3D87CC5E256829AF00FDEC54 /* ContentView.swift */,
 				3D87CC9725682AFD00FDEC54 /* Session.swift */,
-				3D87CC92256829DF00FDEC54 /* ViewRouter.swift */,
+				3D87CC92256829DF00FDEC54 /* viewRouter.swift */,
 				3D87CC8D256829C900FDEC54 /* SearchView.swift */,
 				3D87CCA525686A6B00FDEC54 /* CoreObjects.swift */,
 				3D87CC60256829B200FDEC54 /* Assets.xcassets */,
@@ -279,7 +279,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D87CC8E256829C900FDEC54 /* SearchView.swift in Sources */,
-				3D87CC93256829DF00FDEC54 /* ViewRouter.swift in Sources */,
+				3D87CC93256829DF00FDEC54 /* viewRouter.swift in Sources */,
 				3D87CCA625686A6B00FDEC54 /* CoreObjects.swift in Sources */,
 				3D87CC9825682AFD00FDEC54 /* Session.swift in Sources */,
 				3D87CC5B256829AF00FDEC54 /* AppDelegate.swift in Sources */,
