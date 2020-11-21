@@ -13,7 +13,7 @@ struct SearchView: View {
     @State var searched = ""
     
     @State var barHeight:CGFloat = UIScreen.main.bounds.height*0.4
-    @State var results:[String]? = nil
+    @State var results:[Tweet]? = nil
     
     var body: some View {
         VStack(spacing:0){
@@ -23,10 +23,15 @@ struct SearchView: View {
                     .animation(.spring())
                 VStack(alignment: .leading,spacing:10){
                     Spacer()
+                    if(!searched.isEmpty){
+                        Text("#gigme")
+                            .font(.headline)
+                            .fontWeight(.bold)
+                    }
                     VStack(alignment:.leading){
                         if(searched.isEmpty){
                             HStack{
-                                TextField("Search categories, keywords, locations", text: $searchText, onEditingChanged: {_ in}, onCommit: {commit()})
+                                TextField("Search categories, keywords, locations", text: $searchText, onEditingChanged: {_ in}, onCommit: {commit(text: self.searchText)})
                                     .font(.system(size: 15, weight: .light))
                                     .foregroundColor(.white)
                                     .accentColor(.white)
@@ -68,12 +73,18 @@ struct SearchView: View {
                             .fontWeight(.light)
                             .fixedSize(horizontal: false, vertical: /*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
                     }
-                    if(results == nil && !searchText.isEmpty){
+                    if(results == nil && searched.isEmpty && !searchText.isEmpty){
                         VStack(alignment: .leading){
                             Text("I am a ...")
                                 .font(.title)
                                 .fontWeight(.bold)
                                 .padding(.bottom,5)
+                            
+                            Text("Search for who you are, what you can do or the type of role you want 👓")
+                                .font(.caption)
+                                .fontWeight(.light)
+                                .padding(.bottom,5)
+                                .fixedSize(horizontal: false, vertical: /*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
                             
                             //Replace with Flexbox View
                             HStack{
@@ -139,7 +150,7 @@ struct SearchView: View {
                         }
                     }
                 }
-                if(results != nil){
+                if(!searched.isEmpty){
                     VStack{
                         Spacer()
                         HStack(spacing:40){
@@ -173,19 +184,19 @@ struct SearchView: View {
                         self.barHeight = UIScreen.main.bounds.width*0.8
                     }
             }
-            else if(results == nil){
-                SearchIndexView()
-                .onAppear{
-                    self.barHeight = UIScreen.main.bounds.width*0.65
-                }
-                    .padding(.top)
-                    
-            }
+            
             else if(!self.searched.isEmpty){
-                SearchResultsView(results: $results)
+                SearchResultsView(searched: $searched, results: $results)
                     .onAppear{
                         self.barHeight = UIScreen.main.bounds.width*0.4
                     }
+            }
+            else if(results == nil){
+                SearchIndexView(searchText: $searchText, commit: commit)
+                .onAppear{
+                    self.barHeight = UIScreen.main.bounds.width*0.75
+                }
+                    .padding(.top)
             }
             else{
                 Text("edge case")
@@ -210,9 +221,11 @@ struct SearchView: View {
         }
     }
     
-    func commit(){
+    func commit(text:String){
+        //Fill a query list an iterate through it -> E.G: keyword, developer, run it though get category func, get a category, and then query every keyword in that category, insert order: searchField query first then keyword queries
+        
         if(canCommit()){
-            self.searched = self.searchText
+            self.searched = text
             self.results = []
         }
     }
@@ -224,34 +237,55 @@ struct SearchView: View {
     }
     
     struct GigTweetView:View{
+        
+        let tweet:Tweet
+        
         var body: some View{
             VStack(alignment:.leading,spacing:10){
-                Text("Media and Film")
+                Text(tweet.category?.categoryName ?? tweet.hashtags[0])
                     .font(.caption)
                     .fontWeight(.bold)
-                Text("\"I need a camera man that can shoot in 4K, DM me if interested\"")
+                Text("\"\(tweet.text)\"")
                     .font(.headline)
                     .fontWeight(.light)
                 HStack{
-                    Text("Today 13:22 | Oxford Circus, London, England")
+                    Text(metaData(dateTime: tweet.dateTime, location: tweet.location))
                         .font(.caption)
                         .fontWeight(.light)
                         .foregroundColor(.gray)
                     Spacer()
-                    Text("@MikeWazowski")
-                        .font(.caption)
-                        .fontWeight(.light)
-                        .foregroundColor(Color("TwitterBlue"))
+                    VStack{
+                        //Spacer()
+                        Text("@\(tweet.authorHandle)")
+                            .font(.caption)
+                            .fontWeight(.light)
+                            .foregroundColor(Color("TwitterBlue"))
+                    }
                 }
             }
+        }
+        
+        func metaData(dateTime:String,location:String?) -> String{
+            
+            var meta = ""
+            
+            meta.append(dateTime)
+            if let loc = location{
+                meta.append(" | \(loc)")
+            }
+            
+            return meta
         }
     }
     
     struct MainSubView:View{
         
+        @State var suggestedTweets:[Tweet] = []
+        @State var count = 1
+        
         var body : some View{
             VStack(alignment:.leading){
-                Text("We thought you might be interested in...")
+                Text("We thought you might be interested in... ")
                     .font(.subheadline)
                     .fontWeight(.bold)
                     .multilineTextAlignment(.leading)
@@ -262,8 +296,8 @@ struct SearchView: View {
                 }
                 ScrollView{
                     VStack(spacing:20){
-                        ForEach((0...3),id: \.self){_ in
-                            GigTweetView()
+                        ForEach(suggestedTweets,id: \.tweetID){tweet in
+                            GigTweetView(tweet: tweet)
                                 .padding(.horizontal)
                             Rectangle()
                                 .foregroundColor(.gray)
@@ -273,24 +307,50 @@ struct SearchView: View {
                 }
             }
             .padding(.top,40)
+            .onAppear{
+                self.getSuggestedTweets()
+            }
+        }
+        
+        func getSuggestedTweets(){
+            self.suggestedTweets.append(DummyData.tweet)
         }
         
     }
     
     struct SearchIndexView:View{
         
+        @Binding var searchText:String
+        
+        let commit:(String) -> Void
+        
         var body : some View{
             ScrollView{
                 VStack(spacing:0){
-                    ForEach((0...3),id: \.self){_ in
-                        Button(action:{}){
+                    indexView()
+                }
+                
+            }
+            //.animation(.spring())
+            
+        }
+        
+        func indexView() -> some View{
+            
+            let categories = Categories.getSimilarCategories(text: self.searchText)
+            
+            if(categories.count > 0){
+                return
+                AnyView(
+                    ForEach(categories,id: \.categoryName){category in
+                        Button(action:{commit(category.categoryName)}){
                             VStack(alignment: .leading,spacing:5){
-                                Text("React Js")
+                                Text("\(category.categoryName)")
                                     .font(.subheadline)
                                     .fontWeight(.light)
                                     .padding(.horizontal)
                                 HStack{
-                                    Text("#ReactJS, #webdev, #softwareengineer, #softwaredeveloper")
+                                    Text("\(category.keywords.map({String("#"+$0)}).joined(separator: ", "))")
                                         .font(.caption)
                                         .fontWeight(.light)
                                         .foregroundColor(.gray)
@@ -306,40 +366,90 @@ struct SearchView: View {
                         }
                         .buttonStyle(PlainButtonStyle())
                     }
-                }
-                
+                )
             }
-            .animation(.spring())
-            
+            else{
+                return
+                AnyView(
+                    VStack(spacing:20){
+                        Text("Search Twitter for gigs related to \"\(self.searchText)\"?")
+                            .font(.subheadline)
+                            .fontWeight(.thin)
+                            .underline()
+                            .onTapGesture {
+                                self.commit(self.searchText)
+                            }
+                        
+                        Text("Try using broader keywords ✨")
+                            .font(.headline)
+                            .fontWeight(.bold)
+                            .foregroundColor(Color("TwitterBlue"))
+                        Text("E.G: For an animation role 🎬, use words like \"animate\" \"animation\" \"animator\" \"video\" \"edit\" \"cartoon\" \"Final Cut Pro\" \"cut\"")
+                            .font(.headline)
+                            .fontWeight(.light)
+                            .multilineTextAlignment(.center)
+                            
+                        HStack{
+                            Spacer()
+                        }
+                    }
+                    .padding()
+                )
+            }
         }
     }
     
     struct SearchResultsView:View{
         
-        @Binding var results:[String]?
+        @Binding var searched:String
+        @Binding var results:[Tweet]?
         
         var body : some View{
-            VStack(alignment:.leading){
-                HStack{
-                    if(results != nil){
-                        Text("\(results!.count) Displayed")
-                            .font(.subheadline)
-                            .fontWeight(.light)
+            if(results != nil){
+                VStack{
+                    HStack{
+                        if(results != nil){
+                            HStack{
+                                Text("\(results!.count) Displayed")
+                                    .font(.caption)
+                                    .fontWeight(.light)
+                                Spacer()
+                            }
+                        }
                     }
-                }
-                .padding(.top,40)
-                .padding([.horizontal,.bottom])
-                ScrollView{
-                    VStack(spacing:20){
-                        ForEach((0...3),id: \.self){_ in
-                            GigTweetView()
-                                .padding(.horizontal)
-                            Rectangle()
-                                .foregroundColor(.gray)
-                                .frame(height:0.5)
+                    .padding(.top,40)
+                    .padding(.horizontal)
+                    ScrollView{
+                        if(self.results != nil){
+                            if(!self.results!.isEmpty){
+                                VStack(alignment:.leading,spacing:20){
+                                    ForEach(results!,id: \.tweetID){tweet in
+                                        GigTweetView(tweet: tweet)
+                                            .padding(.horizontal)
+                                        Rectangle()
+                                            .foregroundColor(.gray)
+                                            .frame(height:0.5)
+                                    }
+                                }
+                            }
+                            else{
+                                //None Found
+                                VStack{
+                                    Text("No gigs found for \"\(self.searched)\"")
+                                        .font(.subheadline)
+                                        .fontWeight(.light)
+                                }
+                            }
                         }
                     }
                 }
+            }
+            else{
+                VStack{
+                    //Add a timeout
+                    Text("Loading...")
+                }
+                .padding(.top,40)
             }
         }
     }
