@@ -210,6 +210,9 @@ struct SearchView: View {
             Spacer()
         }
         .edgesIgnoringSafeArea(.all)
+        .onReceive(Session.shared.$results, perform: { tweets in
+            self.results = tweets
+        })
         
         
     }
@@ -228,14 +231,14 @@ struct SearchView: View {
         
         if(canCommit()){
             self.searched = text
-            self.results = nil
+            Session.shared.getTweetsByText(text: text)
         }
     }
     
     func clearSearch(){
         self.searched.removeAll()
         self.searchText.removeAll()
-        self.results = nil
+        Session.shared.clearResults()
     }
     
     struct GigTweetView:View{
