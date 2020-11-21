@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D5679A225695D2700BD7D44 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5679A125695D2700BD7D44 /* MainViewController.swift */; };
 		3D87CC5B256829AF00FDEC54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D87CC5A256829AF00FDEC54 /* AppDelegate.swift */; };
 		3D87CC5D256829AF00FDEC54 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D87CC5C256829AF00FDEC54 /* SceneDelegate.swift */; };
 		3D87CC5F256829AF00FDEC54 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D87CC5E256829AF00FDEC54 /* ContentView.swift */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3D5679A125695D2700BD7D44 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		3D87CC57256829AF00FDEC54 /* GigMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GigMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D87CC5A256829AF00FDEC54 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3D87CC5C256829AF00FDEC54 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				3D87CC5C256829AF00FDEC54 /* SceneDelegate.swift */,
 				3D87CC5E256829AF00FDEC54 /* ContentView.swift */,
 				3D87CC9725682AFD00FDEC54 /* Session.swift */,
+				3D5679A125695D2700BD7D44 /* MainViewController.swift */,
 				3D87CC8D256829C900FDEC54 /* SearchView.swift */,
 				3D87CCA525686A6B00FDEC54 /* CoreObjects.swift */,
 				3D87CC60256829B200FDEC54 /* Assets.xcassets */,
@@ -275,6 +278,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D5679A225695D2700BD7D44 /* MainViewController.swift in Sources */,
 				3D87CC8E256829C900FDEC54 /* SearchView.swift in Sources */,
 				3D87CCA625686A6B00FDEC54 /* CoreObjects.swift in Sources */,
 				3D87CC9825682AFD00FDEC54 /* Session.swift in Sources */,
