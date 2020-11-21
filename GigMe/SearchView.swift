@@ -9,6 +9,8 @@ import SwiftUI
 
 struct SearchView: View {
     
+    @EnvironmentObject var viewRouter:ViewRouter
+    
     @State var searchText = ""
     @State var searched = ""
     
@@ -81,20 +83,20 @@ struct SearchView: View {
                                 .padding(.bottom,5)
                             
                             Text("Search for who you are, what you can do or the type of role you want 👓")
-                                .font(.caption)
+                                .font(.subheadline)
                                 .fontWeight(.light)
                                 .padding(.bottom,5)
                                 .fixedSize(horizontal: false, vertical: /*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
                             
                             //Replace with Flexbox View
                             HStack{
-                                Button(action:{}){
+                                Button(action:{self.commit(text: "software developer")}){
                                 Text("software developer")
                                     .font(.headline)
                                     .fontWeight(.bold)
                                     .underline()
                                 }
-                                Button(action:{}){
+                                Button(action:{self.commit(text: "video developer")}){
                                 Text("video developer")
                                     .font(.headline)
                                     .fontWeight(.bold)
@@ -102,26 +104,26 @@ struct SearchView: View {
                                 }
                             }
                             HStack{
-                                Button(action:{}){
+                                Button(action:{self.commit(text: "interior designer")}){
                                     Text("interior designer")
                                         .font(.headline)
                                         .fontWeight(.bold)
                                         .underline()
                                 }
-                                Button(action:{}){
+                                Button(action:{self.commit(text: "video editor")}){
                                     Text("video editor")
                                         .font(.headline)
                                         .fontWeight(.bold)
                                     .underline()
                                 }
-                                Button(action:{}){
+                                Button(action:{self.commit(text: "tutor")}){
                                     Text("tutor")
                                         .font(.headline)
                                         .fontWeight(.bold)
                                         .underline()
                                 }
                             }
-                            Button(action:{}){
+                            Button(action:{self.viewRouter.presentModal(content: AnyView(CategoryDetailView()))}){
                                 Text("See More Categories")
                                     .font(.subheadline)
                                     .fontWeight(.light)
@@ -139,7 +141,7 @@ struct SearchView: View {
                 if(results == nil && searchText.isEmpty){
                     VStack{
                         Spacer()
-                        Button(action:{}){
+                        Button(action:{self.viewRouter.presentModal(content: AnyView(GigMeGuide()))}){
                             Capsule()
                                 .foregroundColor(.white)
                                 .frame(width:120,height:40)
@@ -154,7 +156,7 @@ struct SearchView: View {
                     VStack{
                         Spacer()
                         HStack(spacing:40){
-                            Button(action:{}){
+                            Button(action:{self.viewRouter.presentModal(content: AnyView(Text("Filter")))}){
                                 Capsule()
                                     .foregroundColor(.white)
                                     .frame(width:120,height:40)
@@ -163,7 +165,7 @@ struct SearchView: View {
                                     .offset(y:20)
                                     
                             }
-                            Button(action:{}){
+                            Button(action:{self.viewRouter.presentModal(content: AnyView(Text("Sort By")))}){
                                 Capsule()
                                     .foregroundColor(.white)
                                     .frame(width:120,height:40)
@@ -181,20 +183,20 @@ struct SearchView: View {
             if(results == nil && searchText.isEmpty){
                 MainSubView()
                     .onAppear{
-                        self.barHeight = UIScreen.main.bounds.width*0.8
+                        self.barHeight = UIScreen.main.bounds.width*0.85
                     }
             }
             
             else if(!self.searched.isEmpty){
                 SearchResultsView(searched: $searched, results: $results)
                     .onAppear{
-                        self.barHeight = UIScreen.main.bounds.width*0.4
+                        self.barHeight = UIScreen.main.bounds.width*0.5
                     }
             }
             else if(results == nil){
                 SearchIndexView(searchText: $searchText, commit: commit)
                 .onAppear{
-                    self.barHeight = UIScreen.main.bounds.width*0.75
+                    self.barHeight = UIScreen.main.bounds.width*0.8
                 }
                     .padding(.top)
             }
@@ -226,7 +228,7 @@ struct SearchView: View {
         
         if(canCommit()){
             self.searched = text
-            self.results = []
+            self.results = nil
         }
     }
     
@@ -411,7 +413,7 @@ struct SearchView: View {
                         if(results != nil){
                             HStack{
                                 Text("\(results!.count) Displayed")
-                                    .font(.caption)
+                                    .font(.subheadline)
                                     .fontWeight(.light)
                                 Spacer()
                             }
@@ -448,10 +450,111 @@ struct SearchView: View {
                 VStack{
                     //Add a timeout
                     Text("Loading...")
+                    /*
+                    Image(systemName: "loading")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width:20,height:20)
+                     */
                 }
                 .padding(.top,40)
             }
         }
+    }
+    
+    struct CategoryDetailView:View{
+        
+        var body : some View{
+            Text("More Categories")
+        }
+        
+    }
+    
+    struct GigMeGuide:View{
+        
+        var body : some View{
+            ScrollView{
+                VStack(alignment: .leading,spacing:20){
+                    Text("Welcome to #gigme! 🥳")
+                        .font(.system(size: 40))
+                        .fontWeight(.bold)
+                    Text("Find gigs/projects from across Twitter that match your skillsets")
+                        .font(.headline)
+                        .fontWeight(.light)
+                    Text("Follow us at @gigme for tips on how to maximise your skill search")
+                        .font(.headline)
+                        .fontWeight(.light)
+                    VStack(alignment: .leading,spacing:30){
+                        
+                        VStack(alignment:.leading,spacing:10){
+                            Text("What is a gig?")
+                                .font(.subheadline)
+                                .fontWeight(.bold)
+                            Text("Anything you want it to be 🤩. If someone needs something created,designed,baked or shaked, we call that a gig. We call you producers, because you produce the talent they need.")
+                                .font(.subheadline)
+                                .fontWeight(.light)
+                        }
+                        
+                        VStack(alignment:.leading,spacing:10){
+                            Text("How do I find gigs?")
+                                .font(.subheadline)
+                                .fontWeight(.bold)
+                            Text("Simply enter keywords relating to the type of role/gig your'e looking for and scroll until you find the gig of your dreams 🌈.")
+                                .font(.subheadline)
+                                .fontWeight(.light)
+                        }
+                        
+                        VStack(alignment:.leading,spacing:10){
+                            Text("How do I advertise gigs?")
+                                .font(.subheadline)
+                                .fontWeight(.bold)
+                            Text("Tweet a brief description of the job you need done, add relevant keywords as hashtags, and to be found even easier add #gigme. We'll handle the rest🤝")
+                                .font(.subheadline)
+                                .fontWeight(.light)
+                        }
+                        
+                        VStack(alignment:.leading,spacing:10){
+                            Text("Another job board?")
+                                .font(.subheadline)
+                                .fontWeight(.bold)
+                            VStack(alignment: .leading,spacing: 10){
+                                HStack(spacing:0){
+                                    Text("Yes but make it ")
+                                        .font(.subheadline)
+                                        .fontWeight(.light)
+                                    Text("different")
+                                        .font(.subheadline)
+                                        .fontWeight(.bold)
+                                        .italic()
+                                    Text(" ✨.")
+                                }
+                                Text("Twitter is all about expression, use #gigme to be creative and express a more personal side to your story. Whether you need talent or you are talent, we believe in hiring people not positions.")
+                                    .font(.subheadline)
+                                    .fontWeight(.light)
+                            }
+                        }
+                        
+                        VStack(alignment:.leading,spacing:10){
+                            Text("#gigpro Comiing Soon ‼️")
+                                .font(.subheadline)
+                                .fontWeight(.bold)
+                            Text("#gigme allows those can supply to meet those who demand, #gigpro will allow those who demand to meet those who can supply . Start adding #gigpro to your projects and bio from now to start build your profile!")
+                                .font(.subheadline)
+                                .fontWeight(.light)
+                        }
+                        
+                        HStack{
+                            Spacer()
+                        }
+                    }
+                    .padding(.top)
+                    
+                    Spacer()
+                }
+                .padding()
+            }
+        }
+        
     }
     
 }

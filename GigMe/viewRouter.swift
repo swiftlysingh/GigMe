@@ -13,6 +13,20 @@ class ViewRouter:ObservableObject{
     
     @Published var view = Views.searchView
     
+    //Modal
+    
+    @Published var modalPresented = false
+    @Published var modalContent:AnyView = AnyView(EmptyView())
+    
+    func presentModal(content:AnyView){
+        self.modalContent = content
+        self.modalPresented = true
+    }
+    
+    func dismissModal(){
+        self.modalPresented = false
+        self.modalContent = AnyView(EmptyView())
+    }
 }
 
 enum Views{

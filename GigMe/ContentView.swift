@@ -12,6 +12,8 @@ struct ContentView: View {
     @EnvironmentObject var viewRouter:ViewRouter
     @State var viewDisplayed:Views = Views.searchView
     
+    @State var modalPresented:Bool = false
+    
     var body: some View {
         ZStack{
             VStack{
@@ -23,8 +25,12 @@ struct ContentView: View {
                 }
             }
         }
+        .sheet(isPresented: $modalPresented,onDismiss: {self.viewRouter.dismissModal()}, content: {viewRouter.modalContent})
         .onReceive(viewRouter.$view, perform: { view in
             self.viewDisplayed = view
+        })
+        .onReceive(viewRouter.$modalPresented, perform: { bool in
+            self.modalPresented = bool
         })
     }
 }

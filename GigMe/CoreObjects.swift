@@ -49,7 +49,7 @@ struct Tweet{
 
 struct Categories{
     
-    static let techEng = Category(categoryName: "Technology and Engineering", keywords: ["software","engineer","web","dev","react","js","c++","java","c","python","py","mobile","development","website","tech","computer", "build"])
+    static let techEng = Category(categoryName: "Software Engineering", keywords: ["software","engineer","web","dev","gaming","react","js","c++","java","c","python","py","mobile","development","website","tech","computer", "build"])
     
     static let mechanic = Category(categoryName: "Utility and Technician", keywords: ["engineer","electrician","utility","plumber","pipes","lights","fix","house","handy","handyman","technician","tech"])
     
