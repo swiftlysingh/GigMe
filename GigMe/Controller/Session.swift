@@ -8,11 +8,50 @@
 import Foundation
 import UIKit
 import SwiftUI
+import Firebase
+import FirebaseFirestore
+
+import Swifter
+
 
 class Session{
     
     //singleton -> object accessible from anywhere within the project
     static let shared = Session()
+    
+    init(){
+        
+        //Test.test()
+        
+        //Load categories
+        Firestore.firestore().collection("Categories").getDocuments() { (snapshot, err) in
+            if let err = err{
+                print(err)
+            }
+            if let snapshot = snapshot{
+                for doc in snapshot.documents{
+                    let dictionary = doc.data()
+                    let name = dictionary[CategoryKey.name.rawValue] as! String?
+                    //Team member understandably made some mistakes with data entry
+                    let names = dictionary["names"] as! String?
+                    let keywords = dictionary[CategoryKey.keywords.rawValue] as! NSArray? as! [String]?
+                    
+                    if let keywords = keywords{
+                        if let names = names{
+                            Categories.categories.append(Category(categoryName: names, keywords: keywords))
+                        }
+                        if let name = name{
+                            Categories.categories.append(Category(categoryName: name, keywords: keywords))
+                        }
+                    }
+                    
+                    
+                    
+                }
+            }
+        }
+        
+    }
     
     @Published var results:[Tweet]? = nil
     
@@ -97,7 +136,7 @@ class Session{
         
         //NOTE: if you are unfamiliar with completion handlers when the results is found simply call the paramter as below
         DispatchQueue.main.async {
-            completionHandler([],nil)
+            completionHandler([DummyData.tweet],nil)
         }
     }
     
@@ -120,6 +159,10 @@ enum LoadErrors:Error{
 
 class DummyData{
     
-    static let tweet = Tweet(tweetID: "xxx", dateTime: "Today", text: "Building a website for my new shop, if you can build websites and are interested hit me up 😁", location: "London, United Kingdom", hashtags: ["#sofwaredeveloper","#webdev","#reactJS","#ecommerce"], authorID: "xxx", authorHandle: "notDiannaRoss", imageUrls: nil, videoUrls: nil)
+    static let tweet = Tweet(tweetID: "xxx", dateTime: "Today", text: "Building a website for my new shop, if you can build websites and are interested hit me up 😁", location: "London, United Kingdom", hashtags: ["sofwaredeveloper","webdev","reactJS","ecommerce"], authorID: "xxx", authorHandle: "29milesb", profileImageUrl: "https://img.redbull.com/images/c_crop,x_0,y_0,h_3335,w_2668/c_fill,w_860,h_1075/q_auto,f_auto/redbullcom/2020/8/27/jfuwclbld3r5ympxjwhc/saweetie-portrait-nails",imageUrls: ["https://zdnet1.cbsistatic.com/hub/i/r/2019/12/03/e356637b-183e-49e5-b5f3-9122be9fd18b/resize/1200x900/3a0c20f4c22749385fedb363379b6be1/istock-827896866.jpg"], videoUrls: nil)
+    
+}
+
+class Test{
     
 }

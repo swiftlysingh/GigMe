@@ -25,6 +25,8 @@ struct Tweet{
     
     let authorHandle:String
     
+    let authorProfileUrl:String
+    
     let imageUrls:[String]?
     
     let videoUrls:[String]?
@@ -32,7 +34,7 @@ struct Tweet{
     //Categories will contain hashtag sets, 
     let category:Category?
     
-    init(tweetID:String,dateTime:String,text:String,location:String? = nil,hashtags:[String],authorID:String,authorHandle:String,imageUrls:[String]? = nil,videoUrls:[String]? = nil){
+    init(tweetID:String,dateTime:String,text:String,location:String? = nil,hashtags:[String],authorID:String,authorHandle:String,profileImageUrl:String = "",imageUrls:[String]? = nil,videoUrls:[String]? = nil){
         self.tweetID = tweetID
         self.dateTime = dateTime
         self.text = text
@@ -40,6 +42,7 @@ struct Tweet{
         self.hashtags = hashtags
         self.authorID = authorID
         self.authorHandle = authorHandle
+        self.authorProfileUrl = profileImageUrl
         self.imageUrls = imageUrls
         self.videoUrls = videoUrls
         self.category = Categories.getBestCategory(text: text, hashtags: hashtags)
@@ -53,7 +56,7 @@ struct Categories{
     
     static let mechanic = Category(categoryName: "Utility and Technician", keywords: ["engineer","electrician","utility","plumber","pipes","lights","fix","house","handy","handyman","technician","tech"])
     
-    static let categories:[Category] = [techEng,mechanic]
+    static var categories:[Category] = []
     
     static func getSimilarCategories(text:String) -> [Category]{
         
@@ -158,4 +161,9 @@ struct Categories{
 struct Category{
     let categoryName:String
     let keywords:[String]
+}
+
+enum CategoryKey:String{
+    case name
+    case keywords
 }

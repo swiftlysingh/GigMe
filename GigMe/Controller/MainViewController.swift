@@ -31,4 +31,5 @@ class ViewRouter:ObservableObject{
 
 enum Views{
     case searchView
+    case profileView
 }
