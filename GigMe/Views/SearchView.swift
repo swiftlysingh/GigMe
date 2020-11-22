@@ -168,12 +168,12 @@ struct SearchView: View {
                                         
                                 }
                                 
-                                Button(action:{self.viewRouter.presentModal(content: AnyView(Text("Sort By")))}){
+                                Button(action:{self.viewRouter.presentModal(content: AnyView(Text("Proof of Concept")))}){
                                     Capsule()
                                         .foregroundColor(.white)
                                         .frame(width:120,height:40)
                                         .shadow(radius: 5)
-                                        .overlay(Text("Proof of Concept").font(.caption).fontWeight(.thin))
+                                        .overlay(Text("Sort By ").font(.caption).fontWeight(.thin))
                                         .offset(y:20)
                                         
                                 }
