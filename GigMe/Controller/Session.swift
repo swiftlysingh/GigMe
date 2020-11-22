@@ -16,6 +16,9 @@ import Swifter
 
 class Session{
     
+    let swifter = Swifter(consumerKey: Secrets.key, consumerSecret:Secrets.key_secret
+    )
+    
     //singleton -> object accessible from anywhere within the project
     static let shared = Session()
     
@@ -125,6 +128,20 @@ class Session{
     private func loadTweetsForString(text:String,completionHandler:@escaping([Tweet]?,Error?)->Void){
         //Main Query -> Should query for tweets (gigs) that contain text similar to the text input
         
+        let query : String = """
+"paid%20work"%20"\(text.lowercased())"%20looking%20OR%20need%20-filter%3Areplies%20-filter%3Aretweets
+"""
+        
+        print(query)
+        
+        swifter.searchTweet(using: query) { (tweets,status) in
+            print("success")
+            print(tweets)
+        } failure: { (error) in
+            print("error")
+        }
+        
+        
         //NOTE: if you are unfamiliar with completion handlers when the results is found simply call the paramter and list the results as below
         DispatchQueue.main.async {
             completionHandler([],nil)
@@ -133,6 +150,12 @@ class Session{
     
     private func loadTweetsForHashtags(hashtags:[String],completionHandler:@escaping([Tweet]?,Error?)->Void){
         //Main Query -> Should query for tweets that contain 1 or more of the hashtags input, this search should always contain #gigme
+        
+        var query : String = "%20"
+        for hashtag in hashtags{
+            query.append("\(hashtag)%20")
+        }
+        print(query)
         
         //NOTE: if you are unfamiliar with completion handlers when the results is found simply call the paramter as below
         DispatchQueue.main.async {
