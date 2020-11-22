@@ -173,7 +173,7 @@ struct SearchView: View {
                                         .foregroundColor(.white)
                                         .frame(width:120,height:40)
                                         .shadow(radius: 5)
-                                        .overlay(Text("Sort By").font(.caption).fontWeight(.thin))
+                                        .overlay(Text("Proof of Concept").font(.caption).fontWeight(.thin))
                                         .offset(y:20)
                                         
                                 }
@@ -295,6 +295,8 @@ struct SearchView: View {
     
     struct MainSubView:View{
         
+        @EnvironmentObject var viewRouter:ViewRouter
+        
         @State var suggestedTweets:[Tweet]? = []
         @State var count = 1
         
@@ -312,7 +314,7 @@ struct SearchView: View {
                             .fontWeight(.light)
                     }
                     .padding()
-                    Button(action:{}){
+                    Button(action:{self.viewRouter.presentModal(content: AnyView(GigBuilder()))}){
                         ZStack{
                             RoundedRectangle(cornerRadius: 20)
                                 .foregroundColor(.white)
