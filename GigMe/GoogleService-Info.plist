@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>1041208186644-vj4mqjtt98n87u0barju6fqf61bv5cvi.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.1041208186644-vj4mqjtt98n87u0barju6fqf61bv5cvi</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBTGPF0WbWnuICKT4Xakf-D0A55aLn85TE</string>
+	<key>GCM_SENDER_ID</key>
+	<string>1041208186644</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>milesBroomfield.com.GigMe</string>
+	<key>PROJECT_ID</key>
+	<string>gigme-15ea5</string>
+	<key>STORAGE_BUCKET</key>
+	<string>gigme-15ea5.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:1041208186644:ios:f288e62d9b4b3e2b2bd401</string>
+	<key>DATABASE_URL</key>
+	<string>https://gigme-15ea5.firebaseio.com</string>
+</dict>
+</plist>

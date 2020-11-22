@@ -1,7 +1,6 @@
 //
-//  ViewRouter.swift
-//  GigMe
-//
+//  MainViewController.swift
+
 //  Created by Miles Broomfield on 21/11/2020.
 //
 
@@ -32,4 +31,5 @@ class ViewRouter:ObservableObject{
 
 enum Views{
     case searchView
+    case profileView
 }

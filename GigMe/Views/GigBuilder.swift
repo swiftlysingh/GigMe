@@ -1,20 +1,20 @@
 //
-//  SearchView.swift
+//  GigBuilder.swift
 //  GigMe
 //
-//  Created by Miles Broomfield on 20/11/2020.
+//  Created by Miles Broomfield on 22/11/2020.
 //
 
 import SwiftUI
 
-struct SearchView: View {
+struct GigBuilder: View {
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
     }
 }
 
-struct SearchView_Previews: PreviewProvider {
+struct GigBuilder_Previews: PreviewProvider {
     static var previews: some View {
-        SearchView()
+        GigBuilder()
     }
 }
