@@ -9,9 +9,6 @@
 /* Begin PBXBuildFile section */
 		2646F9EEE7BFCA28B6E8E8C7 /* Pods_GigMeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F62F9BFA9696C4342EFC6EF /* Pods_GigMeTests.framework */; };
 		3D5679A225695D2700BD7D44 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5679A125695D2700BD7D44 /* MainViewController.swift */; };
-		3D5679F92569BBC200BD7D44 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3D5679F82569BBC200BD7D44 /* GoogleService-Info.plist */; };
-		3D5679FA2569BBC200BD7D44 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3D5679F82569BBC200BD7D44 /* GoogleService-Info.plist */; };
-		3D5679FB2569BBC200BD7D44 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3D5679F82569BBC200BD7D44 /* GoogleService-Info.plist */; };
 		3D567A032569C91100BD7D44 /* ImageHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D567A022569C91100BD7D44 /* ImageHandler.swift */; };
 		3D567A5C256A17BD00BD7D44 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D567A5B256A17BD00BD7D44 /* ProfileView.swift */; };
 		3D567A67256A43D700BD7D44 /* GigBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D567A66256A43D700BD7D44 /* GigBuilder.swift */; };
@@ -25,10 +22,12 @@
 		3D87CC7D256829B300FDEC54 /* GigMeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D87CC7C256829B300FDEC54 /* GigMeUITests.swift */; };
 		3D87CC8E256829C900FDEC54 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D87CC8D256829C900FDEC54 /* SearchView.swift */; };
 		3D87CC9825682AFD00FDEC54 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D87CC9725682AFD00FDEC54 /* Session.swift */; };
-		3D87CCA625686A6B00FDEC54 /* CoreObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D87CCA525686A6B00FDEC54 /* CoreObjects.swift */; };
 		C9C1CE12414B98082B5A13B4 /* Pods_GigMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FE1E5AC56847DAB7133AB97 /* Pods_GigMe.framework */; };
 		CD9E5FD394F38BCE85E9ADBD /* Pods_GigMe_GigMeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42BF50FAA2EDA2FE6F905966 /* Pods_GigMe_GigMeUITests.framework */; };
 		FF694939256A75E200B91172 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF694938256A75E200B91172 /* Secrets.swift */; };
+		FF69493E256A771B00B91172 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FF69493D256A771B00B91172 /* GoogleService-Info.plist */; };
+		FF6949A1256A97E800B91172 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF69499F256A97E800B91172 /* Response.swift */; };
+		FF6949A2256A97E800B91172 /* CoreObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6949A0256A97E800B91172 /* CoreObjects.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,7 +52,6 @@
 		2FE1E5AC56847DAB7133AB97 /* Pods_GigMe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GigMe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		30C31A8112A36040BC0E1CAF /* Pods-GigMe-GigMeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GigMe-GigMeUITests.debug.xcconfig"; path = "Target Support Files/Pods-GigMe-GigMeUITests/Pods-GigMe-GigMeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		3D5679A125695D2700BD7D44 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		3D5679F82569BBC200BD7D44 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3D567A022569C91100BD7D44 /* ImageHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageHandler.swift; sourceTree = "<group>"; };
 		3D567A5B256A17BD00BD7D44 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		3D567A66256A43D700BD7D44 /* GigBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GigBuilder.swift; sourceTree = "<group>"; };
@@ -73,7 +71,6 @@
 		3D87CC7E256829B300FDEC54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3D87CC8D256829C900FDEC54 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		3D87CC9725682AFD00FDEC54 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
-		3D87CCA525686A6B00FDEC54 /* CoreObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreObjects.swift; sourceTree = "<group>"; };
 		42BF50FAA2EDA2FE6F905966 /* Pods_GigMe_GigMeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GigMe_GigMeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DB7450E27DDECD839878E98 /* Pods-GigMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GigMe.release.xcconfig"; path = "Target Support Files/Pods-GigMe/Pods-GigMe.release.xcconfig"; sourceTree = "<group>"; };
 		579C32C59989F570DB85483E /* Pods-GigMeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GigMeTests.release.xcconfig"; path = "Target Support Files/Pods-GigMeTests/Pods-GigMeTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -81,6 +78,9 @@
 		E60EC5FC018727D0E268E821 /* Pods-GigMeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GigMeTests.debug.xcconfig"; path = "Target Support Files/Pods-GigMeTests/Pods-GigMeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E8C48AD755A159AC0094D1ED /* Pods-GigMe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GigMe.debug.xcconfig"; path = "Target Support Files/Pods-GigMe/Pods-GigMe.debug.xcconfig"; sourceTree = "<group>"; };
 		FF694938256A75E200B91172 /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
+		FF69493D256A771B00B91172 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FF69499F256A97E800B91172 /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		FF6949A0256A97E800B91172 /* CoreObjects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreObjects.swift; path = "../../../../../../../../Downloads/GigMe 2/GigMe/Model/CoreObjects.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,7 +135,8 @@
 		3D5679A82569816800BD7D44 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				3D87CCA525686A6B00FDEC54 /* CoreObjects.swift */,
+				FF6949A0256A97E800B91172 /* CoreObjects.swift */,
+				FF69499F256A97E800B91172 /* Response.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -173,7 +174,7 @@
 				3D87CC60256829B200FDEC54 /* Assets.xcassets */,
 				3D87CC65256829B200FDEC54 /* LaunchScreen.storyboard */,
 				3D87CC68256829B200FDEC54 /* Info.plist */,
-				3D5679F82569BBC200BD7D44 /* GoogleService-Info.plist */,
+				FF69493D256A771B00B91172 /* GoogleService-Info.plist */,
 				3D87CC62256829B200FDEC54 /* Preview Content */,
 				FF694938256A75E200B91172 /* Secrets.swift */,
 			);
@@ -338,7 +339,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D87CC67256829B200FDEC54 /* LaunchScreen.storyboard in Resources */,
-				3D5679F92569BBC200BD7D44 /* GoogleService-Info.plist in Resources */,
+				FF69493E256A771B00B91172 /* GoogleService-Info.plist in Resources */,
 				3D87CC64256829B200FDEC54 /* Preview Assets.xcassets in Resources */,
 				3D87CC61256829B200FDEC54 /* Assets.xcassets in Resources */,
 			);
@@ -348,7 +349,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3D5679FA2569BBC200BD7D44 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,7 +356,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3D5679FB2569BBC200BD7D44 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -472,9 +471,10 @@
 			files = (
 				3D5679A225695D2700BD7D44 /* MainViewController.swift in Sources */,
 				3D567A67256A43D700BD7D44 /* GigBuilder.swift in Sources */,
+				FF6949A2256A97E800B91172 /* CoreObjects.swift in Sources */,
 				3D87CC8E256829C900FDEC54 /* SearchView.swift in Sources */,
 				3D567A5C256A17BD00BD7D44 /* ProfileView.swift in Sources */,
-				3D87CCA625686A6B00FDEC54 /* CoreObjects.swift in Sources */,
+				FF6949A1256A97E800B91172 /* Response.swift in Sources */,
 				3D87CC9825682AFD00FDEC54 /* Session.swift in Sources */,
 				3D87CC5B256829AF00FDEC54 /* AppDelegate.swift in Sources */,
 				3D87CC5D256829AF00FDEC54 /* SceneDelegate.swift in Sources */,

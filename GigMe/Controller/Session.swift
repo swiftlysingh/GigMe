@@ -136,7 +136,9 @@ class Session{
         
         swifter.searchTweet(using: query) { (tweets,status) in
             print("success")
-            print(tweets)
+            
+            print(tweets[0]["text"])
+            
         } failure: { (error) in
             print("error")
         }
@@ -156,7 +158,7 @@ class Session{
             query.append("\(hashtag)%20")
         }
         print(query)
-        
+        print()
         //NOTE: if you are unfamiliar with completion handlers when the results is found simply call the paramter as below
         DispatchQueue.main.async {
             completionHandler([DummyData.tweet],nil)
