@@ -9,5 +9,12 @@ The user will select his profession, skills or interests and gigme using our cus
 Tech Stack:-
 Built with :heart: using Swift, SwiftUI, Xcode, TwitterKit, Swifter
 About Us:-
+**Miles Broomfield**, 2nd Year Computer Science Student and aspiring Entrepreneur. I will try to put all food into a wrap for convenience and culinary pleasure. (Responsible for UI/UX Design, Project Management, Front-End and System Architecture)
+
+**Prabaljit Walia**
+Computer Science sophomore at VIT, Vellore with an interest in iOS app development , software development and machine learning. (Responsible for parsing JSON objects and adaptation of Data Format)
+
+**Pushpinder Pal Singh** (Responsible for Back-End library integration and query structure)
+**Thalia Benitez** 
+computer science student with concentration in computer networks & security at NEIU in US. My favorite hobbies including baking, biking & books. (Responsible for Website, UI/UX wireframes and Firestore Population)
 Devpost:- https://devpost.com/software/gigme-ug8xc4
-Github:- https://github.com/milesb123/GigMe
