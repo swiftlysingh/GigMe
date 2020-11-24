@@ -6,6 +6,8 @@
 //
 
 import Foundation
+
+/*
 struct Response:Decodable{
     var items = [Tweet]()
     enum CodingKeys:String,CodingKey{
@@ -24,3 +26,4 @@ struct Response:Decodable{
     
     
 }
+*/

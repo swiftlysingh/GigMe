@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		2646F9EEE7BFCA28B6E8E8C7 /* Pods_GigMeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F62F9BFA9696C4342EFC6EF /* Pods_GigMeTests.framework */; };
+		3D2DB6A2256C616A000C3F0A /* CoreObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2DB6A1256C616A000C3F0A /* CoreObjects.swift */; };
+		3D2DB6A3256C616A000C3F0A /* CoreObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2DB6A1256C616A000C3F0A /* CoreObjects.swift */; };
+		3D2DB6A4256C616A000C3F0A /* CoreObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2DB6A1256C616A000C3F0A /* CoreObjects.swift */; };
+		3D2DB6AF256C658E000C3F0A /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2DB6AE256C658E000C3F0A /* TestView.swift */; };
+		3D2DB6B0256C658E000C3F0A /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2DB6AE256C658E000C3F0A /* TestView.swift */; };
+		3D2DB6B1256C658E000C3F0A /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2DB6AE256C658E000C3F0A /* TestView.swift */; };
 		3D5679A225695D2700BD7D44 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5679A125695D2700BD7D44 /* MainViewController.swift */; };
 		3D567A032569C91100BD7D44 /* ImageHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D567A022569C91100BD7D44 /* ImageHandler.swift */; };
 		3D567A5C256A17BD00BD7D44 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D567A5B256A17BD00BD7D44 /* ProfileView.swift */; };
@@ -27,7 +33,6 @@
 		FF694939256A75E200B91172 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF694938256A75E200B91172 /* Secrets.swift */; };
 		FF69493E256A771B00B91172 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FF69493D256A771B00B91172 /* GoogleService-Info.plist */; };
 		FF6949A1256A97E800B91172 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF69499F256A97E800B91172 /* Response.swift */; };
-		FF6949A2256A97E800B91172 /* CoreObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6949A0256A97E800B91172 /* CoreObjects.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +56,8 @@
 		07B2F034EDCBF48F4D9693F1 /* Pods-GigMe-GigMeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GigMe-GigMeUITests.release.xcconfig"; path = "Target Support Files/Pods-GigMe-GigMeUITests/Pods-GigMe-GigMeUITests.release.xcconfig"; sourceTree = "<group>"; };
 		2FE1E5AC56847DAB7133AB97 /* Pods_GigMe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GigMe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		30C31A8112A36040BC0E1CAF /* Pods-GigMe-GigMeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GigMe-GigMeUITests.debug.xcconfig"; path = "Target Support Files/Pods-GigMe-GigMeUITests/Pods-GigMe-GigMeUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		3D2DB6A1256C616A000C3F0A /* CoreObjects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreObjects.swift; sourceTree = "<group>"; };
+		3D2DB6AE256C658E000C3F0A /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		3D5679A125695D2700BD7D44 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		3D567A022569C91100BD7D44 /* ImageHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageHandler.swift; sourceTree = "<group>"; };
 		3D567A5B256A17BD00BD7D44 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
@@ -80,7 +87,6 @@
 		FF694938256A75E200B91172 /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
 		FF69493D256A771B00B91172 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FF69499F256A97E800B91172 /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
-		FF6949A0256A97E800B91172 /* CoreObjects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreObjects.swift; path = "../../../../../../../../Downloads/GigMe 2/GigMe/Model/CoreObjects.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				3D87CC8D256829C900FDEC54 /* SearchView.swift */,
+				3D2DB6AE256C658E000C3F0A /* TestView.swift */,
 				3D567A66256A43D700BD7D44 /* GigBuilder.swift */,
 				3D567A5B256A17BD00BD7D44 /* ProfileView.swift */,
 				3D567A022569C91100BD7D44 /* ImageHandler.swift */,
@@ -135,7 +142,7 @@
 		3D5679A82569816800BD7D44 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				FF6949A0256A97E800B91172 /* CoreObjects.swift */,
+				3D2DB6A1256C616A000C3F0A /* CoreObjects.swift */,
 				FF69499F256A97E800B91172 /* Response.swift */,
 			);
 			path = Model;
@@ -471,7 +478,7 @@
 			files = (
 				3D5679A225695D2700BD7D44 /* MainViewController.swift in Sources */,
 				3D567A67256A43D700BD7D44 /* GigBuilder.swift in Sources */,
-				FF6949A2256A97E800B91172 /* CoreObjects.swift in Sources */,
+				3D2DB6A2256C616A000C3F0A /* CoreObjects.swift in Sources */,
 				3D87CC8E256829C900FDEC54 /* SearchView.swift in Sources */,
 				3D567A5C256A17BD00BD7D44 /* ProfileView.swift in Sources */,
 				FF6949A1256A97E800B91172 /* Response.swift in Sources */,
@@ -480,6 +487,7 @@
 				3D87CC5D256829AF00FDEC54 /* SceneDelegate.swift in Sources */,
 				3D567A032569C91100BD7D44 /* ImageHandler.swift in Sources */,
 				3D87CC5F256829AF00FDEC54 /* ContentView.swift in Sources */,
+				3D2DB6AF256C658E000C3F0A /* TestView.swift in Sources */,
 				FF694939256A75E200B91172 /* Secrets.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -488,7 +496,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D2DB6B0256C658E000C3F0A /* TestView.swift in Sources */,
 				3D87CC72256829B300FDEC54 /* GigMeTests.swift in Sources */,
+				3D2DB6A3256C616A000C3F0A /* CoreObjects.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -496,7 +506,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D2DB6B1256C658E000C3F0A /* TestView.swift in Sources */,
 				3D87CC7D256829B300FDEC54 /* GigMeUITests.swift in Sources */,
+				3D2DB6A4256C616A000C3F0A /* CoreObjects.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

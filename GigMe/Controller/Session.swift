@@ -60,8 +60,81 @@ class Session{
     
     func getTweetsByText(text:String){
         
-        //load tweets based off of raw text
+        swifter.searchTweet(using: text) { (tweets,status) in
+            //JSON
+            for tweet in tweets.array ?? []{
+                if let tweet = tweet.object{
+                    //print(tweet["text"]?.string)
+                    //print(tweet["id_str"]?.string)
+                    //print(tweet["created_at"]?.string)
+                    DispatchQueue.main.async {
+                        let hashtags = tweet["entities"]
+                        //entities//hashtags//forEach reduce to "text"
+                        
+                        var images:[String] = []
+                        
+                        if let mediaArr = tweet["entities"]?.object?["media"]?.array{
+                            for media in mediaArr{
+                                if let type = media.object?["type"]?.string{
+                                    if(type == "photo"){
+                                        if let url = media.object?["media_url_https"]?.string{
+                                            images.append(url)
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        
+                        
+                        let hashtagsRaw = tweet["entities"]?.object?["hashtags"]?.array ?? []
+                        let cleanedHashtags = hashtagsRaw.map({ $0.object?["text"]?.string ?? "" }).filter({!$0.isEmpty})
+                        
+                        let user = tweet["user"]?.object
+                        let handle = user?["screen_name"]?.string ?? ""
+                        let profileImage = user?["profile_image_url_https"]?.string ?? ""
+                        let userid = user?["id_str"]?.string ?? ""
+                        let location = user?["location"]?.string ?? ""
+                        
+                       
+                        
+                        let newTweet = Tweet(tweetID: tweet["id_str"]?.string ?? "None", dateTime: tweet["created_at"]?.string ?? "", text: tweet["text"]?.string ?? "None", hashtags: cleanedHashtags, authorID: userid, authorHandle: handle,profileImageUrl:profileImage, imageUrls: images)
+                        if(self.results != nil){
+                            self.results?.append(newTweet)
+                        }
+                        else{
+                            self.results = [newTweet]
+                        }
+                        print()
+                    }
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    /*
+                    print(tweet["user"]["profile_image_url_https"])
+                    print(tweet["user"]["name"])
+                    print(tweet["user"]["id_str"])
+                    print(tweet["user"]["location"])
+                    print(tweet["user"]["entities"]["hashtags"])
+                     */
+                }
+                else{
+                    print("error")
+                }
+            }
+            
+
+            
+        } failure: { (error) in
+            print("error")
+        }
         
+        //load tweets based off of raw text
+        /*
         loadTweetsForString(text: text) { (tweets, err) in
             if let err = err{
                 print(err)
@@ -118,6 +191,7 @@ class Session{
                 }
             }
         }
+         */
         
     }
     
@@ -129,8 +203,8 @@ class Session{
         //Main Query -> Should query for tweets (gigs) that contain text similar to the text input
         
         let query : String = """
-"paid%20work"%20"\(text.lowercased())"%20looking%20OR%20need%20-filter%3Areplies%20-filter%3Aretweets
-"""
+                            "paid%20work"%20"\(text.lowercased())"%20looking%20OR%20need%20-filter%3Areplies%20-filter%3Aretweets
+                            """
         
         print(query)
         

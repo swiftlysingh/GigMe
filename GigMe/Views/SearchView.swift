@@ -253,7 +253,7 @@ struct SearchView: View {
                 self.viewRouter.dismissModal()
                 self.viewRouter.presentModal(content: AnyView(ResultDetailView(tweet: tweet, results: results)))
             }){
-                VStack(alignment:.leading,spacing:10){
+                VStack(alignment:.leading,spacing: 5){
                     Text(tweet.category?.categoryName ?? (tweet.hashtags.count > 0 ? tweet.hashtags[0] : "Relevant Gig"))
                         .font(.caption)
                         .fontWeight(.bold)
@@ -261,6 +261,19 @@ struct SearchView: View {
                         .font(.headline)
                         .fontWeight(.light)
                         .fixedSize(horizontal: false, vertical: /*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
+                    
+                    //images
+                    ScrollView(.horizontal){
+                        HStack{
+                            ForEach((tweet.imageUrls ?? []),id: \.self){url in
+                                UrlImage(urlString: url, height: 60, contentMode: .fit,def:"defaultimage")
+                                    .clipShape(RoundedRectangle(cornerRadius: 10))
+                                    .frame(height:100)
+                            }
+                            Spacer()
+                        }
+                    }
+                    
                     HStack{
                         Text(metaData(dateTime: tweet.dateTime, location: tweet.location))
                             .font(.caption)
@@ -671,7 +684,7 @@ struct SearchView: View {
         var body : some View{
             ScrollView{
                 VStack{
-                    VStack(spacing:30){
+                    VStack(spacing:20){
                         HStack(spacing: 10){
                             UrlImage(urlString: tweet.authorProfileUrl, width: 50, height: 50, contentMode: .fill)
                                 .clipShape(Circle())
@@ -691,9 +704,8 @@ struct SearchView: View {
                         ScrollView(.horizontal){
                             HStack{
                                 ForEach((tweet.imageUrls ?? []),id: \.self){url in
-                                    UrlImage(urlString: url, height: 100, contentMode: .fit,def:"defaultimage")
+                                    UrlImage(urlString: url, height: 200, contentMode: .fit,def:"defaultimage")
                                         .clipShape(RoundedRectangle(cornerRadius: 10))
-                                        .frame(height:100)
                                 }
                                 Spacer()
                             }
