@@ -1,20 +1,39 @@
 # GigMe
+### A Hackathon Project
+GigMe is the product of a hackathon. More specifcally [Codechella by Twitter](). Since it was made under 3 days, it currently requires a complete redesign and more importantly a new name but I think we can work with this right now. 
 
-Changing Perceptions about the use of social media
-- Social media often receives bad stigma from traditional media outlets and employers causing users to feel the need to suppress their activity. GigMe reframes twitter not only as a productivity platform but as a passion platform:sparkles:. Gigme will mould the mindset of its users to think of Twitter as a place where they can share even more about what they were working on than before in a casual manner, and employers to see the individual for their ability and who they are above what their C.V or LinkedIn can portray.
-Show, Don’t Tell
-Dispels the perceived skill level of candidates and places emphasis on the projects and milestones they already share on a daily basis using twitter, showcasing their true ability.
-What it does
-The user will select his profession, skills or interests and gigme using our custom search computations would fetch the most relevant posts on twitter showcasing job openings, internship opportunities etc. User also has the ability to refine his search through various filters and can reach out to the person who tweeted the post. This Saves time, Optimises the search process and helps the user to take advantage of the abundant opportunities on Twitter which could have just diminished otherwise.
-Tech Stack:-
-Built with :heart: using Swift, SwiftUI, Xcode, TwitterKit, Swifter
-About Us:-
-**Miles Broomfield**, 2nd Year Computer Science Student and aspiring Entrepreneur. I will try to put all food into a wrap for convenience and culinary pleasure. (Responsible for UI/UX Design, Project Management, Front-End and System Architecture)
+GigMe currently queries tweets and find tweets providing some "Gig". We all have seen [tweets like this](https://twitter.com/SSebi_/status/1333459190199824387) asking for someone for some gigs, right?  This app will curate all the gigs for a particular role and present it to you in a dense, and easy to read form. I believe we can expand it to query for internships and job offer. Wait. Why should we stop at twitter? I think we can query LinkedIn, Facebook, probably any social platform.
 
-**Prabaljit Walia**
-Computer Science sophomore at VIT, Vellore with an interest in iOS app development , software development and machine learning. (Responsible for parsing JSON objects and adaptation of Data Format)
+## 👾 Technologies
+> To help scale development, this app is built using the MVC design pattern. subsequent changes made by contributors do not affect the central architecture.
+* SwiftUI
+* XCTests
+* Swifter
 
-**Pushpinder Pal Singh** (Responsible for Back-End library integration and query structure)
-**Thalia Benitez** 
-computer science student with concentration in computer networks & security at NEIU in US. My favorite hobbies including baking, biking & books. (Responsible for Website, UI/UX wireframes and Firestore Population)
-Devpost:- https://devpost.com/software/gigme-ug8xc4
+## Getting Started
+### Requirements
+
+-   iOS 13.0+
+-   Xcode 11.0+
+-   macOS Catalina or above
+
+###  Setup
+
+1) Fork this project
+2) Clone the forked project to your machine
+3) In your project directory open Terminal and Run  `$ pod install`  and  `$ pod update`
+4) Open the `.xcworkspace` file in Xcode to start menu working on the App
+
+
+#### Set up contributing environment
+
+Before you assist with the development, please set up the project on your local machine, run it, and go through the complete application 
+
+Click through buttons you can find and see where they take you. Explore the app in detail so that you are aware of core features.
+ 
+
+## The Team
+* [Miles Broomfield](https://github.com/milesb123)
+* [Prabaljit Walia](https://github.com/prabal4546)
+* [Pushpinder Pal Singh](https://github.com/pushpinderpalsingh)
+* Thalia Benitez
