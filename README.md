@@ -17,9 +17,9 @@ GigMe currently queries tweets and find tweets providing some "Gig". We all have
 ## Getting Started
 ### Requirements
 
--   iOS 13.0+
--   Xcode 11.0+
--   macOS Catalina or above
+-   iOS 14.0+
+-   Xcode 12.0+
+-   macOS Big Sur or above
 
 ###  Setup
 
