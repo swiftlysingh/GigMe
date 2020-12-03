@@ -1,4 +1,5 @@
 [![Slack](https://img.shields.io/badge/Slack-black.svg?style=for-the-badge&logo=slack)](https://communityinviter.com/apps/findnetwork/find)
+[![Notion](https://img.shields.io/badge/Notion-Coming%20Soon-red.svg?style=for-the-badge&logo=notion)](https://www.notion.so/Find-1777524e2753491494fe08f385e51405)
 [![Testflight](https://img.shields.io/badge/Testflight-Coming%20Soon-blue.svg?style=for-the-badge)]()
 [![App Store](https://img.shields.io/badge/App%20Store-Coming%20Soon-orange.svg?style=for-the-badge)]()
 
@@ -17,9 +18,9 @@ GigMe currently queries tweets and find tweets providing some "Gig". We all have
 ## Getting Started
 ### Requirements
 
--   iOS 13.0+
--   Xcode 11.0+
--   macOS Catalina or above
+-   iOS 14.0+
+-   Xcode 12.0+
+-   macOS Big Sur or above
 
 ###  Setup
 
