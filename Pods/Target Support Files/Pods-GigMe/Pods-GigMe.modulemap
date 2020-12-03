@@ -1,6 +1,0 @@
-framework module Pods_GigMe {
-  umbrella header "Pods-GigMe-umbrella.h"
-
-  export *
-  module * { export * }
-}
