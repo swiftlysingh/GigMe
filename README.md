@@ -9,6 +9,8 @@ GigMe is the product of a hackathon. More specifcally [Codechella by Twitter]().
 
 GigMe currently queries tweets and find tweets providing some "Gig". We all have seen [tweets like this](https://twitter.com/SSebi_/status/1333459190199824387) asking for someone for some gigs, right?  This app will curate all the gigs for a particular role and present it to you in a dense, and easy to read form. I believe we can expand it to query for internships and job offer. Wait. Why should we stop at twitter? I think we can query LinkedIn, Facebook, probably any social platform.
 
+***This project is in very early stage, I am open to any to all ideas. If we neeed, I am happy to start this from scratch.***
+
 ## 👾 Technologies
 > To help scale development, this app is built using the MVC design pattern. subsequent changes made by contributors do not affect the central architecture.
 * SwiftUI
